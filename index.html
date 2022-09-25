@@ -1,0 +1,91 @@
+<html>
+
+<head>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+</head>
+
+<body>
+
+  <!-- Title for Page-->
+  <div class="grid mx-auto px-0 bg-black py-5 text-4xl text-white font-semibold text-center">
+    Astronomy <br> Picture of the Day
+
+    <img class="justify-self-center object-contain h-20 w-20" id="nasa logo"
+      src='https://vignette.wikia.nocookie.net/logopedia/images/6/66/NASA_logo.svg.png/revision/latest?cb=20121230054000'>
+
+  </div>
+
+  <!--Today's Image Button/Random Image Button/Date Picker-->
+  <!-- This is the Input div section-->
+  <div id="inputStuff" class="pb-8 bg-black">
+
+
+
+    <div class="w-full bg-black text-center">
+
+      <button id="todaysImg" onclick="spaceDateImg('today')" class="text-center bg-white hover:bg-gray-300 text-gray-800 
+        font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Today's Image
+      </button>
+
+      <button id="randomImg" onclick="spaceDateImg('random')" class="text-center bg-white hover:bg-gray-300 text-gray-800 
+        font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        Random Image
+      </button>
+
+    </div>
+
+    <!-- date picker -->
+
+    <div class="flex items-center justify-center bg-black pb-8 pt-6">
+      <div class="datepicker relative form-floating mb-3 xl:w-96" data-mdb-toggle-button="false">
+        <input min="1995-06-16" type="date" id="dateImg" class="form-control block w-full px-3 py-1.5 text-base font-normal 
+                  text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition 
+                  ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+
+        <button id="dateImg" onclick="spaceDateImg('userInput')" class="absolute text-center bg-white hover:bg-gray-300 text-gray-800 
+        font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+          Select Date
+        </button>
+
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+
+  <!--
+  This section of code is called when we output the data from the API.
+-->
+  <div id="details" style="display:none" class="relative bg-cover bg-black py-3 px-10 text-white text-center">
+
+    <div id="">
+      <p id="titleInfo" class="mt-8 text-4xl font-semibold"> Photograph Title </p>
+      <p id="dateInfo" class="mt-2 text-1xl italic opacity-80">Date</p>
+      <!-- <p id="copyrightInfo" class="text-2xl italic opacity-80">Copyright:</p> -->
+      <p id="descInfo" class="mt-2 text-1xl font-normal">Explanation</p>
+
+    </div>
+  </div>
+
+
+
+  <!-- Background Img -->
+
+  <div class="relative">
+    <img id="spaceImg" class="absolute w-screen h-screen object-cover"
+      src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1472&q=80"
+      alt="" />
+
+    <div class="absolute w-screen h-screen bg-black bg-opacity-25"></div>
+  </div>
+
+
+  <script src="astropic.js"></script>
+
+</body>
+
+</html>
